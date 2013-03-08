@@ -12,6 +12,10 @@ public class Employee extends Person {
 		return this.job;
 	}
 	
+	public String getSpecialization() {
+		return this.specialization;
+	}
+	
 	public String toString() {
 		String s = "";
 		s += this.getName() + ": " + this.job + " - " + this.specialization + "\n";

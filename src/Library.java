@@ -52,19 +52,30 @@ public class Library {
 		if(bookAssortment.isEmpty()) {
 			System.out.println("Oops... No books in the ibrary...");
 		}else{
-			for(Iterator<BookCopy> it = bookAssortment.iterator(); it.hasNext(); ) {
+			for(Iterator<BookCopy> it = this.bookAssortment.iterator(); it.hasNext(); ) {
 				BookCopy bc = it.next();
 				System.out.print(bc);
 			}
 		}
+		System.out.print("\n\n");
 	}
 	
 	public void printEmployees() {
-		
+		System.out.println("Printing staff members.....");
+		for(Iterator<Employee> it = this.employees.iterator(); it.hasNext(); ) {
+			Employee emp = it.next();
+			System.out.printf("%s - %s - %s\n", emp.getName(), emp.getJob(), emp.getSpecialization());
+		}
+		System.out.print("\n\n");
 	}
 	
 	public void printBorrowers() {
-		
+		System.out.println("Printing the list of borrowers.....");
+		for(Iterator<Person> it = this.borrowers.iterator(); it.hasNext(); ) {
+			Person borrower = it.next();
+			System.out.printf("Cprno. %06d-%04d %20s - %.2f dkk\n", borrower.getCpr().getCprno() / 1000, borrower.getCpr().getCprno() % 1000, borrower.getName(), borrower.getSaldo());
+		}
+		System.out.print("\n\n");
 	}
 	
 	public String toString() {
@@ -230,6 +241,11 @@ public class Library {
 		library.addBorrower(p7);
 		library.addBorrower(p8);
 		library.addBorrower(p9);
+		
+		p1.addMoney(100.00);
+		p5.addMoney(23.43);
+		p7.addMoney(40.12);
+		p9.addMoney(3.33);
 		
 		
 		
