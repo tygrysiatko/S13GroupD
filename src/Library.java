@@ -39,7 +39,7 @@ public class Library {
 		}
 	}
 	
-	public void addEmloyee(Employee emp) {
+	public void addEmployee(Employee emp) {
 		this.employees.add(emp);
 	}
 	
@@ -69,6 +69,10 @@ public class Library {
 	
 	public String toString() {
 		String s = "";
+		s += this.name + "\n\n";
+		s += "1. Use .printBookList() to get the list of all available copies of books.\n";
+		s += "2. Use .printEmployees() to get the list of all staff members.\n";
+		s += "3. Use .printBorrowers() to get the list of all people sign up for the library.\n\n";
 		return s;
 	}
 	
@@ -184,11 +188,58 @@ public class Library {
 		}
 		
 		
+		
+		// Instantiating people
+		
+		Person p1 = new Person(1008884079L, "Jose Rodriges", "Huslejegade 2B 1mf t.h.");
+		Person p2 = new Person(1008884079L, "Niels Sorensen", "Nordregade 12 A 1 t.h.");
+		Person p3 = new Person(1008884079L, "Lars Vel Pomidor", "Brendvej 22 2 t.v.");
+		Person p4 = new Person(1008884079L, "Kathrine Zeta Dzons", "Skolegade 3");
+		Person p5 = new Person(1008884079L, "Waslawa Opacko", "Ostbanetorvet 7 A");
+		Person p6 = new Person(1008884079L, "Mikkel Mikkelsen", "Vestebanet 12");
+		Person p7 = new Person(1008884079L, "Sylwia Patataj", "Smoborngade 2B 1mf t.h.");
+		Person p8 = new Person(1008884079L, "Mineta Hazuri", "Solenskinnergade 6 A 6 F ");
+		Person p9 = new Person(1008884079L, "Tchai Melvlavkso", "Sonderhoj 5");
+		
+		
+		
+		// Instantiating employees
+		
+		Employee emp1 = new Employee(p1, "IT specialist", "ASP.NET & PHP");
+		Employee emp2 = new Employee(p5, "Cleaning Lady", "Elevator cleaning");
+		Employee emp3 = new Employee(p9, "Customer Service", "Finding lost books");
+
+		
 		// Instantiating Library
 		
 		Library library = new Library("Vejle Biblioteket");
+		
+		
+		// Adding books, employees & borrowers
+
 		library.addBookCopies(bookCopies);
-		library.printBookList();
+		library.addEmployee(emp1);
+		library.addEmployee(emp2);
+		library.addEmployee(emp3);
+		library.addBorrower(p1);
+		library.addBorrower(p2);
+		library.addBorrower(p3);
+		library.addBorrower(p4);
+		library.addBorrower(p5);
+		library.addBorrower(p6);
+		library.addBorrower(p7);
+		library.addBorrower(p8);
+		library.addBorrower(p9);
+		
+		
+		
+		// Printing library information
+		
+		System.out.print(library);
+		
+		// library.printBookList();
+		// library.printEmployees();
+		// library.printBorrowers();
 				
 		
 	}
